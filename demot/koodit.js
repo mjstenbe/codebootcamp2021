@@ -13,7 +13,28 @@ function teeJotain() {
 }
 // Lisätään nappiin kuuntelija
 var n = document.getElementsByTagName('button');
-n[0].addEventListener("click", function () { alert("Hello World!"); });
+n[0].addEventListener("click", haeUutiset );
 
 var o = document.getElementsByTagName('h2');
-o[0].addEventListener("click", function(){ alert("Otsikkoa klikattiin!"); });
+o[0].addEventListener("click", function () { alert("Otsikkoa klikattiin!"); });
+
+
+function haeUutiset() {
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "https://www.iltalehti.fi/rss/uutiset.xml", true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var data = xmlhttp.responseXML;
+            var uutiset = data.getElementsByTagName('item');
+    
+            for (var i = 0; i < uutiset.length; i++) {
+                var juttu = uutiset[i].getElementsByTagName('title')[0];
+                console.log(juttu.innerHTML);
+                document.getElementById('newData').innerHTML += "<p>"+juttu.innerHTML+"</p>";
+            }
+        }
+    }
+}
