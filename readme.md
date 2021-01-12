@@ -1,3 +1,3 @@
 Tämä on testitiedosto.
 Uusi rivi
-Hoi Maailma! sd
+Hoi Maailma!
