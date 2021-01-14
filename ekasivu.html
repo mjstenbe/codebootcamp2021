@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <meta name="Author" content="Mika Stenberg" />
+    <meta name="Description" content="Testisivu" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+    <style type="text/css">
+      @font-face {
+        font-family: myFirstFont;
+        src: url("AguafinaScript-Regular.ttf");
+      }
+      @font-face {
+        font-family: toinen;
+        src: url("GreatVibes-Regular.otf");
+      }
+
+      h1 {
+        font-family: myFirstFont;
+      }
+      h2 {
+        font-family: toinen;
+      }
+
+      @media only screen and (min-width: 769px) {
+        h1 {
+          font-size: 50px;
+          color: green;
+        }
+      }
+      @media only screen and (min-width: 481px) and (max-width: 768px) {
+        h1 {
+          font-size: 22px;
+          color: yellow;
+        }
+      }
+
+      @media only screen and (min-width: 0px) and (max-width: 480px) {
+        h1 {
+          font-size: 12px;
+          color: purple;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Otsikko</h1>
+    <h1>Otsikko</h1>
+
+    <article>
+      <p class="tärkeä">Satunnaista tekstiä</p>
+    </article>
+    <p id="leipäteksti">Tähän sopisi navigaatio</p>
+
+    <p class="tärkeä">Toinen tärkeä kappale</p>
+
+    <footer>
+      <h2>Footer</h2>
+      <p class="tärkeä">Lorem ipsum dolorem</p>
+    </footer>
+  </body>
+</html>
